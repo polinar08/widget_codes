@@ -14,9 +14,12 @@ def main():
         formatted_description = operation['description']
         formatted_from = formatter_from(operation.get('from', ''))
         formatted_to = formatter_to(operation['to'])
+        amount = float(operation['operationAmount']['amount'])
+        currency = operation['operationAmount']['currency']['name']
 
-        print(formatted_date, formatted_description)
-        print(formatted_from, ' -> ', formatted_to)
+        print(f"{formatted_date} {formatted_description}")
+        print(f"{formatted_from} -> {formatted_to}")
+        print(f"{amount:.2f} {currency}")
         print()
 
 
